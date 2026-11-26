@@ -97,16 +97,21 @@
 </div>
 
 <!-- ============ TANITIM FİLMİ ============ -->
-<section class="section video-section">
-  <div class="container">
-    <div class="section-head section-head--center">
-      <div class="eyebrow">Tanıtım Filmi</div>
-      <h2>Tesisimizi yakından tanıyın</h2>
-    </div>
-    <div class="video-frame reveal">
-      <video controls playsinline preload="none" poster="assets/video/tanitim-poster.jpg">
-        <source src="assets/video/tanitim.mp4" type="video/mp4" />
-      </video>
+<section class="section film" id="tanitim">
+  <div class="film__frame reveal" id="filmFrame">
+    <video class="film__video" id="filmVideo" muted loop playsinline preload="none"
+      poster="assets/video/tanitim-poster.jpg"
+      data-teaser="assets/video/tanitim-teaser.mp4"
+      data-full="assets/video/tanitim.mp4"></video>
+    <div class="film__overlay">
+      <div class="film__text">
+        <div class="eyebrow">Tanıtım Filmi</div>
+        <h2>Tesisimizi yakından tanıyın</h2>
+      </div>
+      <button type="button" class="film__play" id="filmPlay" aria-label="Tanıtım filmini sesli izle">
+        <span class="film__play-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg></span>
+        <span class="film__play-label">Filmi izle <small>1:26</small></span>
+      </button>
     </div>
   </div>
 </section>

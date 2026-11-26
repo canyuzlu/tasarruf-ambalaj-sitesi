@@ -185,6 +185,49 @@ document.addEventListener("DOMContentLoaded", () => {
     reveals.forEach((el) => el.classList.add("is-visible"));
   }
 
+
+  /* ---- tanıtım filmi: sessiz önizleme + sesli tam film ---- */
+  const filmFrame = document.getElementById("filmFrame");
+  const filmVideo = document.getElementById("filmVideo");
+  const filmPlay = document.getElementById("filmPlay");
+  if (filmFrame && filmVideo && filmPlay) {
+    let full = false;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const startTeaser = () => {
+      if (full || reduceMotion) return;
+      if (!filmVideo.getAttribute("src")) filmVideo.src = filmVideo.dataset.teaser;
+      filmVideo.play().catch(() => {});
+    };
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (full) return;
+          if (entry.isIntersecting) startTeaser();
+          else filmVideo.pause();
+        });
+      }, { threshold: 0.25 }).observe(filmFrame);
+    }
+    filmPlay.addEventListener("click", () => {
+      full = true;
+      filmFrame.classList.add("is-playing");
+      filmVideo.src = filmVideo.dataset.full;
+      filmVideo.loop = false;
+      filmVideo.muted = false;
+      filmVideo.controls = true;
+      filmVideo.play().catch(() => {});
+    });
+    filmVideo.addEventListener("ended", () => {
+      if (!full) return;
+      full = false;
+      filmFrame.classList.remove("is-playing");
+      filmVideo.controls = false;
+      filmVideo.muted = true;
+      filmVideo.loop = true;
+      filmVideo.src = filmVideo.dataset.teaser;
+      startTeaser();
+    });
+  }
+
   /* ---- current year in footer ---- */
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
