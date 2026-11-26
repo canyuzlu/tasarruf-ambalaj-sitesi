@@ -521,6 +521,9 @@ button { font: inherit; cursor: pointer; }
 .product-card__actions .btn { flex: 1; }
 
 .detail-toggle {
+  background: none;
+  border: 0;
+  padding: 0;
   margin-top: 0.4rem;
   font-size: 0.85rem;
   font-weight: 600;
@@ -707,7 +710,8 @@ button { font: inherit; cursor: pointer; }
 }
 .contact-card h3 { font-size: 0.98rem; margin-bottom: 0.3rem; }
 .contact-card p { font-size: 0.9rem; color: var(--ink-soft); }
-.contact-card a { color: var(--teal-light); font-weight: 600; }
+.contact-card a { color: var(--teal-light); font-weight: 600; overflow-wrap: anywhere; }
+.contact-grid > *, .contact-card > div { min-width: 0; }
 
 .form-card {
   background: var(--white);
