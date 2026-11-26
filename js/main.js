@@ -8,7 +8,7 @@ const SITE = {
   phoneDisplay: "0552 597 75 80",
   phoneHref: "+905525977580",
   email: "ahmetbecit@tasarrufambalaj.com.tr",
-  addressLine1: "Velişköy OSB Mah. Sanayi Bulv. No:82/1",
+  addressLine1: "Veliköy OSB Mah. Sanayi Bulv. No:82/1",
   addressLine2: "59000 Çerkezköy / Tekirdağ",
   workHours: "Pazartesi – Cumartesi, 08:30 – 18:00",
 };
