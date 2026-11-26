@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (key === "email") el.href = `mailto:${SITE.email}`;
         if (key === "phoneHref") el.href = `tel:${SITE.phoneHref}`;
       }
-      el.textContent = SITE[key];
+      el.textContent = key === "phoneHref" ? SITE.phoneDisplay : SITE[key];
     }
   });
 
