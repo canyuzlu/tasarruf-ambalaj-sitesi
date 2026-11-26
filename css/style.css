@@ -167,13 +167,14 @@ button { font: inherit; cursor: pointer; }
 }
 .brand { display: flex; align-items: center; gap: 0.7rem; min-width: 0; }
 .brand img {
-  height: 66px;
-  width: auto;
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
   flex-shrink: 0;
   background: #fff;
-  border-radius: 11px;
-  padding: 3px 7px;
-  box-sizing: content-box;
+  border-radius: 12px;
+  padding: 6px;
+  box-sizing: border-box;
 }
 .brand__name { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: var(--ink); white-space: nowrap; text-transform: uppercase; letter-spacing: 0.04em; }
 .brand__name span { display: block; font-family: var(--font-body); font-weight: 500; font-size: 0.68rem; letter-spacing: 0.18em; color: var(--teal-dark); text-transform: uppercase; }
@@ -785,7 +786,7 @@ button { font: inherit; cursor: pointer; }
   .site-header__bar { gap: 0.6rem; }
   .brand__name { font-size: 0.92rem; }
   .brand__name span { font-size: 0.6rem; }
-  .brand img { height: 53px; padding: 2px 5px; }
+  .brand img { width: 56px; height: 56px; padding: 5px; border-radius: 10px; }
   .hero__grid { grid-template-columns: 1fr; }
   .hero__visual { max-width: 420px; margin-inline: auto; }
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
